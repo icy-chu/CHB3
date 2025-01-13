@@ -6,7 +6,7 @@ import logging
 
 # 初始化 Flask 应用
 app = Flask(__name__)#__name__代表目前执行的模组
-CORS(app, resources={r"/predict": {"origins": "*"}})
+CORS(app)
 
 # 配置日志
 logging.basicConfig(level=logging.INFO)
