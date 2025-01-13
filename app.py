@@ -52,9 +52,12 @@ def predict():
         return jsonify({'error': '服务器错误'}), 500
 
 # 主页路由
+import os
+
 @app.route('/')
 def home():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=True, port=5001)
+    port = int(os.environ.get('PORT', 5000))  # 默认端口为 5000
+    app.run(host='0.0.0.0', port=port, debug=True)
