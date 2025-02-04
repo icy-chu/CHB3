@@ -118,7 +118,7 @@
         console.log('发送的数据:', formData); // 调试用，查看生成的 JSON 数据是否正确
 
         // 发送数据到后端
-        fetch('http://127.0.0.1:5000/predict', {
+        fetch('https://rfmodel.onrender.com', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
