@@ -99,15 +99,19 @@
             return;  // 停止执行，防止提交空数据
         }
 
-        // 检查输入值是否大于等于 0
-        if (field.name && parseFloat(field.value) < 0) {
-            alert('The value entered must be greater than or equal to 0');
-            return;  // 停止执行，防止提交负数数据
+        // 检查输入值是否是数字且大于等于 0
+        if (field.name) {
+        const value = parseFloat(field.value);
+
+        // 如果值不是有效的数字，或小于 0，则提示并停止执行
+        if (isNaN(value) || value < 0) {
+        alert('The value entered must be a valid number greater than or equal to 0');
+        return;  // 停止执行，防止提交无效数据
         }
 
-        if (field.name) {
-            formData[field.name] = parseFloat(field.value);
-        }
+        formData[field.name] = value;
+}
+
     }
 
         // 生成 ALT_AST_pca 特征
