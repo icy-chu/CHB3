@@ -23,9 +23,9 @@ scaler = joblib.load('scaler.pkl')
 
 # 自定义评分等级
 def assign_grade(score):
-    if score > 70:
+    if score > 64.73:
         return 'High'
-    elif score >= 30:
+    elif score >= 33.90:
         return 'Medium'
     else:
         return 'Low'
